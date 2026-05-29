@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -31,8 +32,6 @@ body{
 
     padding:20px;
 
-    overflow-x:hidden;
-
     background:
     radial-gradient(circle at top left,#ff8fc7 0%,transparent 25%),
     radial-gradient(circle at bottom right,#ff4f9a 0%,transparent 25%),
@@ -40,59 +39,12 @@ body{
 
 }
 
-/* EFECTOS */
-
-body::before{
-
-    content:"";
-
-    position:absolute;
-
-    width:350px;
-    height:350px;
-
-    background:rgba(255,255,255,.3);
-
-    border-radius:50%;
-
-    top:-120px;
-    left:-120px;
-
-    filter:blur(40px);
-
-}
-
-body::after{
-
-    content:"";
-
-    position:absolute;
-
-    width:300px;
-    height:300px;
-
-    background:rgba(255,255,255,.25);
-
-    border-radius:50%;
-
-    bottom:-100px;
-    right:-100px;
-
-    filter:blur(40px);
-
-}
-
-/* TARJETA */
-
 .main-card{
 
-    position:relative;
-    z-index:10;
-
     width:100%;
-    max-width:450px;
+    max-width:470px;
 
-    background:rgba(255,255,255,.75);
+    background:rgba(255,255,255,.85);
 
     backdrop-filter:blur(18px);
 
@@ -106,30 +58,12 @@ body::after{
     0 20px 45px rgba(255,20,120,.15),
     0 10px 25px rgba(0,0,0,.08);
 
-    animation:entrada 1s ease;
-
-}
-
-/* ANIMACIÓN */
-
-@keyframes entrada{
-
-    0%{
-        opacity:0;
-        transform:translateY(40px) scale(.9);
-    }
-
-    100%{
-        opacity:1;
-        transform:translateY(0) scale(1);
-    }
-
 }
 
 .icono{
 
-    width:95px;
-    height:95px;
+    width:90px;
+    height:90px;
 
     border-radius:50%;
 
@@ -142,17 +76,15 @@ body::after{
     justify-content:center;
     align-items:center;
 
-    font-size:42px;
+    font-size:40px;
 
     color:white;
-
-    box-shadow:0 10px 25px rgba(255,47,134,.35);
 
 }
 
 h1{
 
-    font-size:2.4rem;
+    font-size:2.3rem;
 
     margin-bottom:10px;
 
@@ -166,16 +98,6 @@ h1{
 
     line-height:1.7;
 
-    font-size:1rem;
-
-}
-
-/* FOTO */
-
-.graduada-box{
-
-    margin-top:30px;
-
 }
 
 .foto-graduada{
@@ -183,49 +105,37 @@ h1{
     width:150px;
     height:150px;
 
-    object-fit:cover;
-
     border-radius:50%;
+
+    object-fit:cover;
 
     border:5px solid white;
 
-    box-shadow:0 10px 30px rgba(255,47,134,.25);
+    margin-top:25px;
+
+    box-shadow:0 10px 25px rgba(255,47,134,.25);
 
 }
 
-.nombre-graduada{
+.nombre{
 
     margin-top:15px;
 
     color:#ff2f86;
 
-    font-size:1.6rem;
+    font-size:1.5rem;
 
 }
-
-.mensaje-graduada{
-
-    color:#666;
-
-    margin-top:10px;
-
-    line-height:1.7;
-
-}
-
-/* CAJA INFO */
 
 .details-box{
 
-    margin-top:28px;
+    margin-top:25px;
 
-    background:rgba(255,255,255,.65);
+    background:white;
 
     border-radius:25px;
 
-    padding:22px;
-
-    box-shadow:0 8px 20px rgba(0,0,0,.04);
+    padding:20px;
 
 }
 
@@ -243,41 +153,27 @@ h1{
 
 }
 
-/* PREGUNTA */
+.input-box{
 
-.pregunta{
+    margin-top:25px;
 
-    margin-top:30px;
-
-    margin-bottom:20px;
-
-    font-size:1.3rem;
-
-    font-weight:600;
-
-    color:#222;
+    text-align:left;
 
 }
 
-/* SELECT */
-
-.guests-selector{
-
-    margin-bottom:30px;
-
-}
-
-label{
+.input-box label{
 
     display:block;
 
-    margin-bottom:12px;
+    margin-bottom:10px;
 
-    color:#666;
+    color:#555;
+
+    font-weight:500;
 
 }
 
-.select-style{
+.input-style{
 
     width:100%;
 
@@ -287,31 +183,29 @@ label{
 
     border-radius:18px;
 
+    background:white;
+
     outline:none;
 
     font-size:1rem;
 
-    background:white;
-
-    box-shadow:0 5px 15px rgba(0,0,0,.06);
+    box-shadow:0 5px 15px rgba(0,0,0,.05);
 
 }
 
-/* BOTONES */
+.botones{
 
-.botones-container{
+    margin-top:25px;
 
     display:flex;
 
     flex-direction:column;
 
-    gap:16px;
+    gap:15px;
 
 }
 
 .btn{
-
-    width:100%;
 
     padding:18px;
 
@@ -327,12 +221,6 @@ label{
 
     transition:.3s;
 
-    text-decoration:none;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
 }
 
 .btn-si{
@@ -341,55 +229,35 @@ label{
 
     color:white;
 
-    box-shadow:0 12px 25px rgba(255,47,134,.3);
-
-}
-
-.btn-si:hover{
-
-    transform:translateY(-4px) scale(1.02);
-
 }
 
 .btn-no{
 
-    background:#ececec;
+    background:#e9e9e9;
 
     color:#555;
 
 }
 
-.btn-no:hover{
+.btn:hover{
 
     transform:translateY(-3px);
 
 }
 
-/* PANEL RSVP */
-
-.panel-rsvp{
+.panel{
 
     margin-top:35px;
 
-    background:rgba(255,255,255,.65);
+    background:white;
 
     border-radius:25px;
 
     padding:25px;
 
-    box-shadow:0 10px 20px rgba(0,0,0,.05);
-
 }
 
-.panel-rsvp h3{
-
-    margin-bottom:20px;
-
-    color:#222;
-
-}
-
-.stats-container{
+.stats{
 
     display:flex;
 
@@ -399,7 +267,7 @@ label{
 
 }
 
-.stat-card{
+.card{
 
     flex:1;
 
@@ -411,15 +279,15 @@ label{
 
 }
 
-.aceptados{
+.asisten{
 
     background:linear-gradient(135deg,#ff2f86,#ff74b8);
 
 }
 
-.rechazados{
+.noasisten{
 
-    background:linear-gradient(135deg,#999,#c0c0c0);
+    background:linear-gradient(135deg,#999,#c5c5c5);
 
 }
 
@@ -431,45 +299,25 @@ label{
 
 }
 
-.texto{
+.lista{
 
-    display:block;
-
-    margin-top:5px;
-
-}
-
-.lista-confirmados{
-
-    background:white;
-
-    border-radius:18px;
-
-    padding:18px;
+    margin-top:20px;
 
     text-align:left;
 
 }
 
-.lista-titulo{
-
-    font-weight:600;
-
-    margin-bottom:10px;
-
-    color:#444;
-
-}
-
-#listaPersonas{
+.lista ul{
 
     list-style:none;
 
+    margin-top:10px;
+
 }
 
-#listaPersonas li{
+.lista li{
 
-    padding:10px 0;
+    padding:12px 0;
 
     border-bottom:1px solid #eee;
 
@@ -477,27 +325,13 @@ label{
 
 }
 
-/* FOOTER */
-
 .footer{
 
     margin-top:30px;
 
     color:#777;
 
-    line-height:1.7;
-
-    font-size:.92rem;
-
-}
-
-@media(max-width:500px){
-
-    .main-card{
-
-        padding:35px 22px;
-
-    }
+    line-height:1.6;
 
 }
 
@@ -517,28 +351,19 @@ label{
 
     <p class="subtitulo">
         Me encantaría que me acompañaras
-        en uno de los momentos más especiales
+        en uno de los momentos más importantes
         de mi vida 💖
     </p>
 
     <!-- FOTO -->
 
-    <div class="graduada-box">
+    <img src="graduada.jpg" class="foto-graduada">
 
-        <!-- CAMBIA LA FOTO -->
-        <img src="graduada.jpg" alt="Graduada" class="foto-graduada">
+    <h2 class="nombre">
+        Diana Berenice Lizarraga Rios 🎓
+    </h2>
 
-        <h2 class="nombre-graduada">
-            Diana Berenice Lizarraga Rios 🎓
-        </h2>
-
-        <p class="mensaje-graduada">
-            Gracias por ser parte de este día tan especial ✨
-        </p>
-
-    </div>
-
-    <!-- INFO EVENTO -->
+    <!-- INFO -->
 
     <div class="details-box">
 
@@ -549,53 +374,53 @@ label{
 
             <br><br>
 
-            📅 Viernes 3 de Julio
+            📅 Jueves 2 de Julio
 
             <br>
 
-            📍 Salón 1928
+            📍 Salón La Terraza
 
             <br><br>
 
-            🎉 Será un día inolvidable
+            🎉 ¡Será un día inolvidable!
 
         </p>
 
     </div>
 
-    <p class="pregunta">
-        ¿Podrás asistir? 🥂
-    </p>
+    <!-- NOMBRE -->
 
-    <!-- SELECT -->
-
-    <div class="guests-selector">
+    <div class="input-box">
 
         <label>
-            Acompañantes incluyéndote:
+            Tu nombre:
         </label>
 
-        <select id="num_personas" class="select-style">
+        <input
+        type="text"
+        id="nombre"
+        class="input-style"
+        placeholder="Escribe tu nombre">
 
-            <option value="1">
-                1 Persona
-            </option>
+    </div>
 
-            <option value="2">
-                2 Personas
-            </option>
+    <!-- PERSONAS -->
 
-            <option value="3">
-                3 Personas
-            </option>
+    <div class="input-box">
 
-            <option value="4">
-                4 Personas
-            </option>
+        <label>
+            ¿Cuántas personas asistirán?
+        </label>
 
-            <option value="5">
-                Más de 4 Personas
-            </option>
+        <select
+        id="personas"
+        class="input-style">
+
+            <option value="1">1 Persona</option>
+            <option value="2">2 Personas</option>
+            <option value="3">3 Personas</option>
+            <option value="4">4 Personas</option>
+            <option value="5">5 Personas</option>
 
         </select>
 
@@ -603,65 +428,63 @@ label{
 
     <!-- BOTONES -->
 
-    <div class="botones-container">
+    <div class="botones">
 
         <button
         onclick="confirmarAsistencia()"
         class="btn btn-si">
 
-            Sí, ¡ahí estaré! 💃✨
+            Sí asistiré 💃✨
 
         </button>
 
-        <a
-        href="https://wa.me/526671060007?text=Hola,+muchas+gracias+por+la+invitación,+pero+no+podré+asistir.+🥺"
+        <button
+        onclick="noAsistire()"
         class="btn btn-no">
 
             No podré asistir 😢
 
-        </a>
+        </button>
 
     </div>
 
-    <!-- PANEL RSVP -->
+    <!-- PANEL -->
 
-    <div class="panel-rsvp">
+    <div class="panel">
 
         <h3>
-            Confirmaciones del Evento ✨
+            Confirmaciones ✨
         </h3>
 
-        <div class="stats-container">
+        <br>
 
-            <div class="stat-card aceptados">
+        <div class="stats">
 
-                <span
+            <div class="card asisten">
+
+                <div
                 class="numero"
                 id="contadorSi">
 
                     0
 
-                </span>
+                </div>
 
-                <span class="texto">
-                    Asistirán 
-                </span>
+                Asistirán 🎉
 
             </div>
 
-            <div class="stat-card rechazados">
+            <div class="card noasisten">
 
-                <span
+                <div
                 class="numero"
                 id="contadorNo">
 
                     0
 
-                </span>
+                </div>
 
-                <span class="texto">
-                    No asistirán 
-                </span>
+                No asistirán 😢
 
             </div>
 
@@ -669,74 +492,203 @@ label{
 
         <!-- LISTA -->
 
-        <div class="lista-confirmados">
+        <div class="lista">
 
-            <div class="lista-titulo">
-                Personas confirmadas:
-            </div>
+            <strong>
+                Lista de asistentes:
+            </strong>
 
-            <ul id="listaPersonas"></ul>
+            <ul id="listaAsistentes"></ul>
 
         </div>
 
     </div>
 
-    <!-- FOOTER -->
-
     <div class="footer">
 
-        Por favor confirma antes del evento
-        para organizar mejor los lugares 💕
+        Gracias por formar parte
+        de este momento tan especial 💖
 
     </div>
 
 </div>
 
-<script>
+<!-- FIREBASE -->
 
-let asistentes = 0;
-let rechazados = 0;
+<script type="module">
+
+import { initializeApp }
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
+import {
+
+getFirestore,
+collection,
+addDoc,
+onSnapshot
+
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+/* CONFIG FIREBASE */
+
+const firebaseConfig = {
+
+  apiKey: "AIzaSyB131V4TUJhAxU56QX8scSZosTe1rAXt2A",
+
+  authDomain: "invitaciongraduacion-c295f.firebaseapp.com",
+
+  projectId: "invitaciongraduacion-c295f",
+
+  storageBucket: "invitaciongraduacion-c295f.firebasestorage.app",
+
+  messagingSenderId: "1085766695630",
+
+  appId: "1:1085766695630:web:9d93cf1d0bf06a80b62e9f",
+
+  measurementId: "G-11SEVKN48M"
+
+};
+
+/* INICIAR FIREBASE */
+
+const app =
+initializeApp(firebaseConfig);
+
+const db =
+getFirestore(app);
+
+/* COLECCIONES */
+
+const asistentesRef =
+collection(db,"asistentes");
+
+const noAsistenRef =
+collection(db,"noAsisten");
+
+/* LISTA EN TIEMPO REAL */
+
+onSnapshot(asistentesRef,(snapshot)=>{
+
+    let lista =
+    document.getElementById("listaAsistentes");
+
+    lista.innerHTML = "";
+
+    document.getElementById("contadorSi")
+    .innerText = snapshot.size;
+
+    snapshot.forEach((doc)=>{
+
+        let data = doc.data();
+
+        let li =
+        document.createElement("li");
+
+        li.innerHTML =
+        "💖 " +
+        data.nombre +
+        " - " +
+        data.personas +
+        " persona(s)";
+
+        lista.appendChild(li);
+
+    });
+
+});
+
+/* CONTADOR NO ASISTEN */
+
+onSnapshot(noAsistenRef,(snapshot)=>{
+
+    document.getElementById("contadorNo")
+    .innerText = snapshot.size;
+
+});
 
 /* CONFIRMAR */
 
-function confirmarAsistencia(){
+window.confirmarAsistencia =
+async function(){
 
-    var telefono = "526671060007";
+    let nombre =
+    document.getElementById("nombre").value;
 
-    var selector =
-    document.getElementById("num_personas");
+    let personas =
+    document.getElementById("personas").value;
 
-    var valorSeleccionado =
-    selector.options[selector.selectedIndex].text;
+    if(nombre === ""){
 
-    asistentes++;
+        alert("Por favor escribe tu nombre");
 
-    document.getElementById("contadorSi")
-    .innerText = asistentes;
+        return;
 
-    var lista =
-    document.getElementById("listaPersonas");
+    }
 
-    var nuevo =
-    document.createElement("li");
+    await addDoc(asistentesRef,{
 
-    nuevo.innerHTML =
-    "✨ Invitado confirmado - "
-    + valorSeleccionado;
+        nombre:nombre,
+        personas:personas
 
-    lista.appendChild(nuevo);
+    });
 
-    var mensaje =
-    "¡Hola! 💖 Confirmo mi asistencia. Seremos: "
-    + valorSeleccionado +
-    " 🎓✨🥂";
+    let telefono =
+    "526671060007";
 
-    var mensajeCodificado =
+    let mensaje =
+    "Hola 💖 Confirmo mi asistencia. Soy "
+    + nombre +
+    " y asistiremos "
+    + personas +
+    " persona(s) 🎓✨";
+
+    let url =
+    "https://wa.me/" +
+    telefono +
+    "?text=" +
     encodeURIComponent(mensaje);
 
-    window.location.href =
-    "https://wa.me/" + telefono +
-    "?text=" + mensajeCodificado;
+    window.open(url,"_blank");
+
+}
+
+/* NO ASISTIRÁ */
+
+window.noAsistire =
+async function(){
+
+    let nombre =
+    document.getElementById("nombre").value;
+
+    if(nombre === ""){
+
+        alert("Por favor escribe tu nombre");
+
+        return;
+
+    }
+
+    await addDoc(noAsistenRef,{
+
+        nombre:nombre
+
+    });
+
+    let telefono =
+    "526671060007";
+
+    let mensaje =
+    "Hola 💖 Soy "
+    + nombre +
+    " y no podré asistir 😢";
+
+    let url =
+    "https://wa.me/" +
+    telefono +
+    "?text=" +
+    encodeURIComponent(mensaje);
+
+    window.open(url,"_blank");
 
 }
 
