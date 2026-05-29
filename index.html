@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Invitación Graduación</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:20px;
+
+    overflow-x:hidden;
+
+    background:
+    radial-gradient(circle at top left,#ff8fc7 0%,transparent 25%),
+    radial-gradient(circle at bottom right,#ff4f9a 0%,transparent 25%),
+    linear-gradient(135deg,#ffe5f1,#ffd4eb,#fff0f8);
+
+}
+
+/* EFECTOS */
+
+body::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:350px;
+    height:350px;
+
+    background:rgba(255,255,255,.3);
+
+    border-radius:50%;
+
+    top:-120px;
+    left:-120px;
+
+    filter:blur(40px);
+
+}
+
+body::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:300px;
+    height:300px;
+
+    background:rgba(255,255,255,.25);
+
+    border-radius:50%;
+
+    bottom:-100px;
+    right:-100px;
+
+    filter:blur(40px);
+
+}
+
+/* TARJETA */
+
+.main-card{
+
+    position:relative;
+    z-index:10;
+
+    width:100%;
+    max-width:450px;
+
+    background:rgba(255,255,255,.75);
+
+    backdrop-filter:blur(18px);
+
+    border-radius:35px;
+
+    padding:40px 30px;
+
+    text-align:center;
+
+    box-shadow:
+    0 20px 45px rgba(255,20,120,.15),
+    0 10px 25px rgba(0,0,0,.08);
+
+    animation:entrada 1s ease;
+
+}
+
+/* ANIMACIÓN */
+
+@keyframes entrada{
+
+    0%{
+        opacity:0;
+        transform:translateY(40px) scale(.9);
+    }
+
+    100%{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
+
+}
+
+.icono{
+
+    width:95px;
+    height:95px;
+
+    border-radius:50%;
+
+    margin:auto;
+    margin-bottom:20px;
+
+    background:linear-gradient(135deg,#ff2f86,#ff74b8);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:42px;
+
+    color:white;
+
+    box-shadow:0 10px 25px rgba(255,47,134,.35);
+
+}
+
+h1{
+
+    font-size:2.4rem;
+
+    margin-bottom:10px;
+
+    color:#222;
+
+}
+
+.subtitulo{
+
+    color:#666;
+
+    line-height:1.7;
+
+    font-size:1rem;
+
+}
+
+/* FOTO */
+
+.graduada-box{
+
+    margin-top:30px;
+
+}
+
+.foto-graduada{
+
+    width:150px;
+    height:150px;
+
+    object-fit:cover;
+
+    border-radius:50%;
+
+    border:5px solid white;
+
+    box-shadow:0 10px 30px rgba(255,47,134,.25);
+
+}
+
+.nombre-graduada{
+
+    margin-top:15px;
+
+    color:#ff2f86;
+
+    font-size:1.6rem;
+
+}
+
+.mensaje-graduada{
+
+    color:#666;
+
+    margin-top:10px;
+
+    line-height:1.7;
+
+}
+
+/* CAJA INFO */
+
+.details-box{
+
+    margin-top:28px;
+
+    background:rgba(255,255,255,.65);
+
+    border-radius:25px;
+
+    padding:22px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.04);
+
+}
+
+.details-box p{
+
+    line-height:1.8;
+
+    color:#444;
+
+}
+
+.details-box strong{
+
+    color:#ff2f86;
+
+}
+
+/* PREGUNTA */
+
+.pregunta{
+
+    margin-top:30px;
+
+    margin-bottom:20px;
+
+    font-size:1.3rem;
+
+    font-weight:600;
+
+    color:#222;
+
+}
+
+/* SELECT */
+
+.guests-selector{
+
+    margin-bottom:30px;
+
+}
+
+label{
+
+    display:block;
+
+    margin-bottom:12px;
+
+    color:#666;
+
+}
+
+.select-style{
+
+    width:100%;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:18px;
+
+    outline:none;
+
+    font-size:1rem;
+
+    background:white;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.06);
+
+}
+
+/* BOTONES */
+
+.botones-container{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:16px;
+
+}
+
+.btn{
+
+    width:100%;
+
+    padding:18px;
+
+    border:none;
+
+    border-radius:18px;
+
+    font-size:1rem;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    text-decoration:none;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+}
+
+.btn-si{
+
+    background:linear-gradient(135deg,#ff2f86,#ff74b8);
+
+    color:white;
+
+    box-shadow:0 12px 25px rgba(255,47,134,.3);
+
+}
+
+.btn-si:hover{
+
+    transform:translateY(-4px) scale(1.02);
+
+}
+
+.btn-no{
+
+    background:#ececec;
+
+    color:#555;
+
+}
+
+.btn-no:hover{
+
+    transform:translateY(-3px);
+
+}
+
+/* PANEL RSVP */
+
+.panel-rsvp{
+
+    margin-top:35px;
+
+    background:rgba(255,255,255,.65);
+
+    border-radius:25px;
+
+    padding:25px;
+
+    box-shadow:0 10px 20px rgba(0,0,0,.05);
+
+}
+
+.panel-rsvp h3{
+
+    margin-bottom:20px;
+
+    color:#222;
+
+}
+
+.stats-container{
+
+    display:flex;
+
+    gap:15px;
+
+    margin-bottom:20px;
+
+}
+
+.stat-card{
+
+    flex:1;
+
+    padding:20px;
+
+    border-radius:20px;
+
+    color:white;
+
+}
+
+.aceptados{
+
+    background:linear-gradient(135deg,#ff2f86,#ff74b8);
+
+}
+
+.rechazados{
+
+    background:linear-gradient(135deg,#999,#c0c0c0);
+
+}
+
+.numero{
+
+    font-size:2rem;
+
+    font-weight:700;
+
+}
+
+.texto{
+
+    display:block;
+
+    margin-top:5px;
+
+}
+
+.lista-confirmados{
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:18px;
+
+    text-align:left;
+
+}
+
+.lista-titulo{
+
+    font-weight:600;
+
+    margin-bottom:10px;
+
+    color:#444;
+
+}
+
+#listaPersonas{
+
+    list-style:none;
+
+}
+
+#listaPersonas li{
+
+    padding:10px 0;
+
+    border-bottom:1px solid #eee;
+
+    color:#555;
+
+}
+
+/* FOOTER */
+
+.footer{
+
+    margin-top:30px;
+
+    color:#777;
+
+    line-height:1.7;
+
+    font-size:.92rem;
+
+}
+
+@media(max-width:500px){
+
+    .main-card{
+
+        padding:35px 22px;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="main-card">
+
+    <div class="icono">
+        🎓
+    </div>
+
+    <h1>¡Hola! ✨</h1>
+
+    <p class="subtitulo">
+        Me encantaría que me acompañaras
+        en uno de los momentos más especiales
+        de mi vida 💖
+    </p>
+
+    <!-- FOTO -->
+
+    <div class="graduada-box">
+
+        <!-- CAMBIA LA FOTO -->
+        <img src="graduada.jpg" alt="Graduada" class="foto-graduada">
+
+        <h2 class="nombre-graduada">
+            Diana Berenice Lizarraga Rios 🎓
+        </h2>
+
+        <p class="mensaje-graduada">
+            Gracias por ser parte de este día tan especial ✨
+        </p>
+
+    </div>
+
+    <!-- INFO EVENTO -->
+
+    <div class="details-box">
+
+        <p>
+
+            Te invito a mi
+            <strong>Fiesta de Graduación</strong>
+
+            <br><br>
+
+            📅 Viernes 3 de Julio
+
+            <br>
+
+            📍 Salón 1928
+
+            <br><br>
+
+            🎉 Será un día inolvidable
+
+        </p>
+
+    </div>
+
+    <p class="pregunta">
+        ¿Podrás asistir? 🥂
+    </p>
+
+    <!-- SELECT -->
+
+    <div class="guests-selector">
+
+        <label>
+            Acompañantes incluyéndote:
+        </label>
+
+        <select id="num_personas" class="select-style">
+
+            <option value="1">
+                1 Persona
+            </option>
+
+            <option value="2">
+                2 Personas
+            </option>
+
+            <option value="3">
+                3 Personas
+            </option>
+
+            <option value="4">
+                4 Personas
+            </option>
+
+            <option value="5">
+                Más de 4 Personas
+            </option>
+
+        </select>
+
+    </div>
+
+    <!-- BOTONES -->
+
+    <div class="botones-container">
+
+        <button
+        onclick="confirmarAsistencia()"
+        class="btn btn-si">
+
+            Sí, ¡ahí estaré! 💃✨
+
+        </button>
+
+        <a
+        href="https://wa.me/526671060007?text=Hola,+muchas+gracias+por+la+invitación,+pero+no+podré+asistir.+🥺"
+        class="btn btn-no">
+
+            No podré asistir 😢
+
+        </a>
+
+    </div>
+
+    <!-- PANEL RSVP -->
+
+    <div class="panel-rsvp">
+
+        <h3>
+            Confirmaciones del Evento ✨
+        </h3>
+
+        <div class="stats-container">
+
+            <div class="stat-card aceptados">
+
+                <span
+                class="numero"
+                id="contadorSi">
+
+                    0
+
+                </span>
+
+                <span class="texto">
+                    Asistirán 
+                </span>
+
+            </div>
+
+            <div class="stat-card rechazados">
+
+                <span
+                class="numero"
+                id="contadorNo">
+
+                    0
+
+                </span>
+
+                <span class="texto">
+                    No asistirán 
+                </span>
+
+            </div>
+
+        </div>
+
+        <!-- LISTA -->
+
+        <div class="lista-confirmados">
+
+            <div class="lista-titulo">
+                Personas confirmadas:
+            </div>
+
+            <ul id="listaPersonas"></ul>
+
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+
+    <div class="footer">
+
+        Por favor confirma antes del evento
+        para organizar mejor los lugares 💕
+
+    </div>
+
+</div>
+
+<script>
+
+let asistentes = 0;
+let rechazados = 0;
+
+/* CONFIRMAR */
+
+function confirmarAsistencia(){
+
+    var telefono = "526671060007";
+
+    var selector =
+    document.getElementById("num_personas");
+
+    var valorSeleccionado =
+    selector.options[selector.selectedIndex].text;
+
+    asistentes++;
+
+    document.getElementById("contadorSi")
+    .innerText = asistentes;
+
+    var lista =
+    document.getElementById("listaPersonas");
+
+    var nuevo =
+    document.createElement("li");
+
+    nuevo.innerHTML =
+    "✨ Invitado confirmado - "
+    + valorSeleccionado;
+
+    lista.appendChild(nuevo);
+
+    var mensaje =
+    "¡Hola! 💖 Confirmo mi asistencia. Seremos: "
+    + valorSeleccionado +
+    " 🎓✨🥂";
+
+    var mensajeCodificado =
+    encodeURIComponent(mensaje);
+
+    window.location.href =
+    "https://wa.me/" + telefono +
+    "?text=" + mensajeCodificado;
+
+}
+
+</script>
+
+</body>
+</html>
