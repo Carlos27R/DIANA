@@ -239,6 +239,16 @@ h1{
 
 }
 
+.btn-admin{
+    background: transparent;
+    color: #ff74b8;
+    font-size: 0.85rem;
+    padding: 10px;
+    border: 1px dashed #ff74b8;
+    margin-top: 25px;
+    width: 100%;
+}
+
 .btn:hover{
 
     transform:translateY(-3px);
@@ -254,6 +264,9 @@ h1{
     border-radius:25px;
 
     padding:25px;
+    
+    /* Modificado para que empiece oculto */
+    display: none; 
 
 }
 
@@ -355,15 +368,11 @@ h1{
         de mi vida 💖
     </p>
 
-    <!-- FOTO -->
-
     <img src="graduada.jpg" class="foto-graduada">
 
     <h2 class="nombre">
         Diana Berenice Lizarraga Rios 🎓
     </h2>
-
-    <!-- INFO -->
 
     <div class="details-box">
 
@@ -374,11 +383,11 @@ h1{
 
             <br><br>
 
-            📅 Jueves 2 de Julio
+            📅 Viernes 3 de Julio
 
             <br>
 
-            📍 Salón La Terraza
+            📍 Salón 1928
 
             <br><br>
 
@@ -387,8 +396,6 @@ h1{
         </p>
 
     </div>
-
-    <!-- NOMBRE -->
 
     <div class="input-box">
 
@@ -403,8 +410,6 @@ h1{
         placeholder="Escribe tu nombre">
 
     </div>
-
-    <!-- PERSONAS -->
 
     <div class="input-box">
 
@@ -426,8 +431,6 @@ h1{
 
     </div>
 
-    <!-- BOTONES -->
-
     <div class="botones">
 
         <button
@@ -448,9 +451,11 @@ h1{
 
     </div>
 
-    <!-- PANEL -->
+    <button onclick="desbloquearPanel()" class="btn btn-admin" id="btnAdmin">
+        🔒 Ver Panel de Confirmaciones
+    </button>
 
-    <div class="panel">
+    <div class="panel" id="panelAdministracion">
 
         <h3>
             Confirmaciones ✨
@@ -490,8 +495,6 @@ h1{
 
         </div>
 
-        <!-- LISTA -->
-
         <div class="lista">
 
             <strong>
@@ -512,8 +515,6 @@ h1{
     </div>
 
 </div>
-
-<!-- FIREBASE -->
 
 <script type="module">
 
@@ -585,7 +586,7 @@ onSnapshot(asistentesRef,(snapshot)=>{
         document.createElement("li");
 
         li.innerHTML =
-        "💖 " +
+        " - " +
         data.nombre +
         " - " +
         data.personas +
@@ -633,14 +634,14 @@ async function(){
     });
 
     let telefono =
-    "526671060007";
+    "526674261300";
 
     let mensaje =
-    "Hola 💖 Confirmo mi asistencia. Soy "
+    "Hola ❤️ Confirmo mi asistencia. Soy "
     + nombre +
     " y asistiremos "
     + personas +
-    " persona(s) 🎓✨";
+    " persona(s) 👩🏻‍🎓✨   ";
 
     let url =
     "https://wa.me/" +
@@ -675,12 +676,12 @@ async function(){
     });
 
     let telefono =
-    "526671060007";
+    "526674261300";
 
     let mensaje =
-    "Hola 💖 Soy "
+    "Hola ❤️ Soy "
     + nombre +
-    " y no podré asistir 😢";
+    " y no podré asistir 🥲";
 
     let url =
     "https://wa.me/" +
@@ -690,6 +691,21 @@ async function(){
 
     window.open(url,"_blank");
 
+}
+
+/* FUNCIÓN DE CONTRASEÑA PARA EL PANEL */
+window.desbloquearPanel = function(){
+    // AQUÍ PUEDES CAMBIAR LA CONTRASEÑA (Actualmente es: Graduacion2026)
+    const contrasenaCorrecta = "Diana2026"; 
+    
+    let intento = prompt("Introduce la contraseña para ver las confirmaciones:");
+    
+    if(intento === contrasenaCorrecta){
+        document.getElementById("panelAdministracion").style.display = "block";
+        document.getElementById("btnAdmin").style.display = "none"; // Esconde el botón una vez desbloqueado
+    } else if (intento !== null) {
+        alert("Contraseña incorrecta ❌ Acceso denegado.");
+    }
 }
 
 </script>
